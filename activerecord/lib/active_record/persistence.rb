@@ -640,7 +640,7 @@ module ActiveRecord
         # See +ActiveRecord::Inheritance#discriminate_class_for_record+ for
         # the single-table inheritance discriminator.
         def discriminate_class_for_record(record)
-          self
+          self.query_result_class
         end
 
         # Called by +_update_record+ and +_delete_record+

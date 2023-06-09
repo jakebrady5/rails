@@ -81,7 +81,7 @@ module ActiveRecord
           result_set.map { |record| instantiate(record, column_types, &block) }
         else
           # Instantiate a homogeneous set
-          result_set.map { |record| instantiate_instance_of(self, record, column_types, &block) }
+          result_set.map { |record| instantiate_instance_of(self.query_result_class, record, column_types, &block) }
         end
       end
     end
